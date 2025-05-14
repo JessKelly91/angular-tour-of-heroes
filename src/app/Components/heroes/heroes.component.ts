@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 
 import { Hero } from '../../Models/hero';
-import { HeroService } from '../../Services/hero.service';
+import { HeroService } from '../../Services/Hero/hero.service';
+import { MessageService } from '../../Services/Message/message.service';
 
 //inject HeroService and call getHeroes for heroes = 
   

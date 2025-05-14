@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './Components/heroes/heroes.component';
 import { HeroDetailComponent } from './Components/hero-detail/hero-detail.component';
-import { MessagesComponent } from './components/messages/messages.component';
+import { MessagesComponent } from './Components/messages/messages.component';
 
 @NgModule({
   declarations: [
