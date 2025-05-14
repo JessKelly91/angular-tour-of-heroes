@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 
 import { Hero } from '../../Models/hero';
-import { HEROES } from '../../Models/MockModels/mock-heroes';
-import { FormsModule } from '@angular/forms';
+import { HeroService } from '../../Services/hero.service';
+
+//inject HeroService and call getHeroes for heroes = 
   
 @Component({
   selector: 'app-heroes',
@@ -13,11 +14,24 @@ import { FormsModule } from '@angular/forms';
 })
 export class HeroesComponent {
 
-  heroes = HEROES;
-
+  heroes: Hero[] = [];
   selectedHero?: Hero;
+
+  constructor(private heroService: HeroService) {
+  };
 
   onSelect(hero: Hero) {
     this.selectedHero = hero;
   };
+
+  getHeroes(): void {
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
+  }
+
+  ngOnInit(): void {
+    this.getHeroes();
+  }
+
+
 }
