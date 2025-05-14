@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 
-import { Hero } from '../hero';
-import { HEROES } from '../mock-heroes';
+import { Hero } from '../../Models/hero';
+import { HEROES } from '../../Models/mock-heroes';
 import { FormsModule } from '@angular/forms';
   
 @Component({

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HeroesComponent } from './heroes/heroes.component'
+import { HeroesComponent } from './Components/heroes/heroes.component'
 
 @Component({
   standalone: false,

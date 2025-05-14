@@ -5,8 +5,8 @@ import { NgFor } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroesComponent } from './Components/heroes/heroes.component';
+import { HeroDetailComponent } from './Components/hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
