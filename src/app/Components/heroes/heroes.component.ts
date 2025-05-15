@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 
 import { Hero } from '../../Models/hero';
@@ -18,21 +18,20 @@ export class HeroesComponent {
   heroes: Hero[] = [];
   selectedHero?: Hero;
 
-  constructor(private heroService: HeroService) {
-  };
+  constructor(private heroService: HeroService, private messageService: MessageService){ };
 
-  onSelect(hero: Hero) {
-    this.selectedHero = hero;
-  };
+  ngOnInit(): void {
+    this.getHeroes();
+  }
 
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
   }
 
-  ngOnInit(): void {
-    this.getHeroes();
-  }
-
+  onSelect(hero: Hero) {
+    this.selectedHero = hero;
+    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  };
 
 }
