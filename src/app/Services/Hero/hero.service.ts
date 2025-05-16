@@ -15,10 +15,7 @@ export class HeroService {
 
   private heroesUrl = 'api/heroes';  // URL to web api
 
-  constructor(
-    private messageService: MessageService,
-    private http: HttpClient)
-  { }
+  constructor(private messageService: MessageService,private http: HttpClient){ }
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
