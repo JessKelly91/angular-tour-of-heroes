@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Hero } from '../../Models/hero';
 import { HeroService } from '../../Services/Hero/hero.service';
+import { MessageService } from '../../Services/Message/message.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +13,12 @@ import { HeroService } from '../../Services/Hero/hero.service';
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private messageService: MessageService) { }
+
+  /** Log a HeroService message with the MessageService */
+  private log(message: string) {
+    this.messageService.add(`Dashboard: ${message}`);
+  }
 
   ngOnInit(): void {
     this.getHeroes();
