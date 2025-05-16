@@ -3,6 +3,7 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { FormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +24,8 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgFor
+    NgFor,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),
